@@ -30,5 +30,4 @@ struct GraphicVertex
 using DepthFrame = Frame<float>;
 using EndFrame = Frame<Color>;
 using VertexSequence = vertex3*;
-using Resolution_type = ResolutionType;
 using Indecies = int*;

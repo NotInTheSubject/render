@@ -10,7 +10,7 @@ struct PipeStateBase
     EndFrame*       endFrame    = nullptr;
     VertexSequence* vertexSequence = nullptr;
     Indecies*       incs        = nullptr;
-    Resolution_type*resolution  = nullptr;
+    ResolutionType*resolution  = nullptr;
     
 
     virtual
