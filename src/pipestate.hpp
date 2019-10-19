@@ -5,7 +5,7 @@
 
 #include <ostream>
 
-struct Pipestate
+struct PipeStateBase
 {
     DepthFrame*     depthBuffer = nullptr;
     EndFrame*       endFrame    = nullptr;
@@ -14,6 +14,7 @@ struct Pipestate
     Resolution_type*resolution  = nullptr;
     
 
+    virtual
     bool is_valid_state() const noexcept {
         return (depthBuffer != nullptr)
             && (endFrame    != nullptr)
@@ -22,6 +23,7 @@ struct Pipestate
             && (resolution  != nullptr);
     }
 
+    virtual
     void dump(std::ostream& out) const {
         out << "------------------------\n";
         out << "Pipestate dump\n";
@@ -36,7 +38,3 @@ struct Pipestate
     }
 };
 
-Pipestate& represent_as_state(void* ptr) noexcept {
-    assert(ptr != nullptr);
-    return *static_cast<Pipestate*>(ptr);
-}

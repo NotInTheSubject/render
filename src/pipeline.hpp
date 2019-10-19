@@ -1,15 +1,8 @@
 #pragma once
-#include <map>
-#include <any>
 #include <ostream>
 
-enum class CONFIGTYPE {
-    DEPTH_FRAME,
-    ENDFRAME,
-    RESOLUTION_FOR_DRAWING,
-    VERTEX_SEQUENCE,
-    INDEX_SEQUENCE
-};
+#include "pipestate.hpp"
+
 /**
  * Pipeline class. The constructor and the set_config take
  * as arguments pointers to the corresponding values CONFIGTYPE
@@ -21,10 +14,9 @@ enum class CONFIGTYPE {
 class Pipeline
 {
 public:
-    using config_type = std::map<CONFIGTYPE, std::any>;
+    using config_type = PipeStateBase;
 
 private:
-    void *state_storage;
     config_type const* config;
 public:
     Pipeline(config_type const*);
