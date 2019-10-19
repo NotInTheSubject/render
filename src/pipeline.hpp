@@ -8,7 +8,14 @@ enum class CONFIGTYPE {
     ENDFRAME,
     RESOLUTION_FOR_DRAWING,
 };
-
+/**
+ * Pipeline class. The constructor and the set_config take
+ * as arguments pointers to the corresponding values CONFIGTYPE
+ * 
+ * If content of a config is enough to processing is_full_conf()
+ * returns TRUE. Otherwise, a dump() will help showing what is 
+ * received and what is missing.
+ */
 class Pipeline
 {
 public:
