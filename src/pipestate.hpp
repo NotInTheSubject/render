@@ -1,6 +1,5 @@
 #pragma once
 
-#include "frame.hpp"
 #include "pipestatetypes.hpp"
 
 #include <ostream>

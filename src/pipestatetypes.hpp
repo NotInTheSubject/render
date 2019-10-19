@@ -1,4 +1,4 @@
-#include "frame.hpp"
+#include "frame/frame.hpp"
 
 using Color = struct { float b, g, r, a; };
 using DepthFrame = Frame<float>;
