@@ -1,6 +1,8 @@
 #include "pipeline.hpp"
 #include "pipestate.hpp"
 
+extern void run_pipeline(PipeStateBase& state) noexcept;
+
 void Pipeline::set_config(Pipeline::config_type const* cfg) {
     config = cfg;
 }
@@ -35,4 +37,11 @@ Pipeline::Pipeline(Pipeline::config_type const* cfg)
 Pipeline::~Pipeline()
 {
     config = nullptr;
+}
+
+void 
+Pipeline::run_process() noexcept {
+    assert(config != nullptr);
+    run_pipeline(*config);
+    return;
 }
