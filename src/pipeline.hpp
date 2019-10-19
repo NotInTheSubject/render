@@ -7,6 +7,8 @@ enum class CONFIGTYPE {
     DEPTH_FRAME,
     ENDFRAME,
     RESOLUTION_FOR_DRAWING,
+    VERTEX_SEQUENCE,
+    INDEX_SEQUENCE
 };
 /**
  * Pipeline class. The constructor and the set_config take
